@@ -1,6 +1,7 @@
 "use client"; // Marque ce fichier comme un composant client
 
 import { useEffect, useState } from "react";
+import Image from 'next/image';
 
 export default function Recipes() {
   const [recipes, setRecipes] = useState([]);

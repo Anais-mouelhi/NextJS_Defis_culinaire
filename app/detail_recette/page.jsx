@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from 'next/image';  // Assurez-vous que cette ligne est présente.
 
 export default function RecipeDetail({ params }) {
   const { title } = params; // Accéder au titre directement via params
@@ -55,7 +56,7 @@ export default function RecipeDetail({ params }) {
     <div className="container mx-auto px-4 py-10 max-w-4xl">
       <h2 className="text-3xl font-bold text-center mb-6">Recipe Details</h2>
       <div className="bg-white p-4 rounded-lg shadow-md">
-      <Image 
+        <Image 
           src={recipe.imageUrl || "https://via.placeholder.com/256x256"}
           alt={recipe.title}
           className="w-full h-[350px] object-cover mb-4"
