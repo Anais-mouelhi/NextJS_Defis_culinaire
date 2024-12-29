@@ -166,7 +166,7 @@ export default function PostForm() {
               </h4>
               <p className="text-gray-300 mt-2">{post.content}</p>
               {post.image && (
-                <img
+                <Image 
                   src={post.image}
                   alt="Post Image"
                   className="mt-2 rounded-lg max-w-full h-auto"
@@ -200,7 +200,7 @@ export default function PostForm() {
             <h4 className="text-xl font-semibold">{selectedPost.userName}</h4>
             <p className="text-gray-300 mt-2">{selectedPost.content}</p>
             {selectedPost.image && (
-              <img
+              <Image
                 src={selectedPost.image}
                 alt="Post Image"
                 className="mt-4 rounded-lg max-w-full h-auto"
@@ -216,7 +216,7 @@ export default function PostForm() {
                   >
                     <p className="text-gray-300">{repost.content}</p>
                     {repost.image && (
-                      <img
+                      <Image 
                         src={repost.image}
                         alt="Repost Image"
                         className="mt-2 rounded-lg max-w-full h-auto"

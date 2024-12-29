@@ -111,7 +111,7 @@ export default function Recipes() {
           <div key={index} className="bg-white p-4 duration-300">
             {/* Afficher l'image de la recette avec une taille réduite */}
             {recipe.imageUrl ? (
-              <img
+             <Image 
                 src={recipe.imageUrl}
                 alt={`Dish from ${recipe.country}`}
                 className="w-full h-[350px] object-cover mb-4"
