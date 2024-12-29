@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Image from 'next/image';  // Assurez-vous que cette ligne est présente.
+import { useEffect, useState, useCallback } from "react";
+import Image from 'next/image';
 
 export default function RecipeDetail({ params }) {
   const { title } = params; // Accéder au titre directement via params
@@ -9,7 +9,8 @@ export default function RecipeDetail({ params }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const fetchRecipeDetails = async () => {
+  // Utilisation de useCallback pour garder la fonction stable entre les renders
+  const fetchRecipeDetails = useCallback(async () => {
     try {
       const response = await fetch("/api/generateRecipe", {
         method: "POST",
@@ -32,13 +33,13 @@ export default function RecipeDetail({ params }) {
     } finally {
       setLoading(false);
     }
-  };
+  }, [title]); // Ajout de 'title' comme dépendance de useCallback
 
   useEffect(() => {
     if (title) {
       fetchRecipeDetails();
     }
-  }, [title]);
+  }, [title, fetchRecipeDetails]); // Ajout de 'fetchRecipeDetails' dans les dépendances
 
   if (loading) {
     return <p className="text-center py-10">Loading recipe details...</p>;
