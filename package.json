@@ -1,0 +1,39 @@
+{
+  "name": "next-auth-register",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "cron": "node cronJob.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.7",
+    "formidable": "^3.5.2",
+    "mongoose": "^7.8.6",
+    "next": "^15.1.6",
+    "next-auth": "^4.24.11",
+    "node-cron": "^3.0.3",
+    "openai": "^4.80.1",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/formidable": "^3.4.5",
+    "@types/mongoose": "^5.11.96",
+    "@types/node": "latest",
+    "@types/node-cron": "^3.0.11",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "autoprefixer": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "postcss": "latest",
+    "tailwindcss": "latest",
+    "typescript": "latest"
+  }
+}
